@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentines</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body, html {
+  width:100%;
+  height:100%;
+  font-family:Poppins,sans-serif;
+  overflow:hidden;
+  background: url('bg.jpg') no-repeat center center/cover;
+  position:relative;
+}
+
+.overlay {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+  z-index:0;
+}
+
+.content {
+  position:relative;
+  z-index:1;
+  width:90%;
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:25px;
+}
+
+.card {
+  background:linear-gradient(135deg,#ffd6f0,#c6e7ff);
+  padding:30px 25px;
+  border-radius:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.3);
+  color:#444;
+  font-family:Poppins,sans-serif;
+  font-size:clamp(1.8rem,4vw,2.5rem);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+
+.card video {
+  width:100%;
+  max-width:500px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.button-container {
+  display:flex;
+  gap:20px;
+}
+
+button {
+  padding:15px 45px;
+  border:none;
+  border-radius:20px;
+  font-size:1.3rem;
+  cursor:pointer;
+  box-shadow:0 6px 12px rgba(0,0,0,0.2);
+  transition:.3s;
+}
+
+button:hover {
+  transform:scale(1.07);
+}
+
+.sure {background:#b6f5c3; color:#333;}
+.yoko {background:#ffb6b6; color:#333;}
+
+#notify {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(135deg,#ffd6f0,#c6e7ff);
+  padding:25px 35px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  font-size:clamp(1.5rem,3.5vw,2.2rem);
+  font-weight:700;
+  color:#444;
+  display:none;
+  z-index:999;
+  text-align:center;
+}
+
+.heart {
+  position:absolute;
+  bottom:0;
+  font-size:2rem;
+  animation:floatUp 5s linear forwards;
+  pointer-events:none;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity:1;}
+  100% { transform: translateY(-110vh) rotate(360deg); opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="content">
+  <div class="card">
+    Yay! Happy Valentines! Libre moko ha?
+    <video autoplay muted loop>
+      <source src="meme.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="button-container">
+    <button class="sure" id="sureBtn">Sure😉</button>
+    <button class="yoko" id="yokoBtn">Yoko nga😏</button>
+  </div>
+</div>
+
+<div id="notify"></div>
+
+<script>
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerText = '🖤';
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  heart.style.fontSize = (20 + Math.random()*30) + 'px';
+  document.body.appendChild(heart);
+  setTimeout(()=> heart.remove(), 5000);
+}
+setInterval(createHeart, 400);
+
+const notify = document.getElementById('notify');
+
+document.getElementById('sureBtn').addEventListener('click', function(){
+  notify.innerText = "You're the best!😚";
+  notify.style.display = "block";
+  setTimeout(()=> notify.style.display = "none", 2000);
+});
+
+document.getElementById('yokoBtn').addEventListener('click', function(){
+  notify.innerText = "☹️";
+  notify.style.display = "block";
+  setTimeout(()=> notify.style.display = "none", 2000);
+});
+</script>
+
+</body>
+</html>

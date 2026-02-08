@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,purple,lightblue);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  text-align:center;
+}
+
+h1{
+  font-family:Pacifico,cursive;
+  font-size:clamp(2rem,5vw,3.5rem);
+  background:linear-gradient(hotpink,darkred);
+  -webkit-background-clip:text;
+  color:transparent;
+  font-weight:bold;
+}
+
+.img-box{
+  width:250px;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  margin:20px auto;
+}
+
+.img-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.container{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+  color:hotpink;
+  font-family:Verdana;
+  font-size:clamp(1.2rem,3vw,1.8rem);
+  margin-bottom:20px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+}
+
+button{
+  padding:18px 45px;
+  border:none;
+  border-radius:20px;
+  font-size:1.2rem;
+  cursor:pointer;
+  box-shadow:0 6px 12px rgba(0,0,0,0.2);
+  background:#bde7ff;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.07);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Be My Valentine.</h1>
+
+<div class="img-box">
+  <img src="cat4.jpg">
+</div>
+
+<div class="container">
+  Ganyan talaga pag di na love
+</div>
+
+<div class="buttons">
+  <button onclick="location.href='valentine5.html'">OK</button>
+</div>
+
+</body>
+</html>
